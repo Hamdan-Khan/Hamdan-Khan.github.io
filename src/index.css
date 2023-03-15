@@ -9,7 +9,31 @@
 body {
   overflow-x: hidden;
   font-family: "Tilt Warp", cursive;
+  background-image: linear-gradient(
+    to left bottom,
+    #000000,
+    #130f11,
+    #1e191c,
+    #282228,
+    #312c35,
+    #312c35,
+    #312c35,
+    #312c35,
+    #282228,
+    #1e191c,
+    #130f11,
+    #000000
+  );
 }
 .text-shadow {
-  text-shadow: green;
+  text-shadow: 0px 0px 20px #43c72c;
+}
+.glass {
+  /* From https://css.glass */
+  background: rgba(0, 237, 58, 0.13);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(19px);
+  -webkit-backdrop-filter: blur(19px);
+  border: 1.2px solid rgba(0, 237, 59, 0.338);
 }

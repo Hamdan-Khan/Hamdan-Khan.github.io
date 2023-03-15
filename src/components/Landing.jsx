@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 
 const Landing = () => {
   return (
-    <div className="h-[820px] px-12">
+    <div className="h-[820px]">
       <Navbar></Navbar>
       <LandingText />
     </div>

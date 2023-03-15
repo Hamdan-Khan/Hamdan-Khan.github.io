@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 const AnimatedName = () => {
   return (
-    <div>
+    <div className="cursor-pointer">
       <motion.div
-        className="max-w-max px-4"
+        className="max-w-max mx-4"
         animate={{ scale: 1.1 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
       >
