@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import ScrollIntoView from "react-scroll-into-view";
 
 const Sidebar = ({ side, toggleSide }) => {
   return (
     <aside
-      className={`bg-green-700 overflow-hidden text-gray-200 top-0 left-0 ${
+      className={`bg-green-700 overflow-hidden text-gray-200 z-10 top-0 left-0 ${
         !side ? "left-[100%]" : ""
       } fixed w-[100vw] min-h-[400px] duration-300 h-full py-4 md:py-7 pb-12 md:pb-16 px-10 md:px-16`}
     >
@@ -19,7 +20,7 @@ const Sidebar = ({ side, toggleSide }) => {
             onClick={toggleSide}
           ></i>
         </div>
-        <motion.div
+        {/* <motion.div
           whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
           whileTap={{ scale: 1 }}
           className="border-b-2 border-green-300"
@@ -66,7 +67,67 @@ const Sidebar = ({ side, toggleSide }) => {
           >
             Contact
           </Link>
-        </motion.div>
+        </motion.div> */}
+        <ScrollIntoView selector="#landing">
+          <motion.div
+            whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
+            whileTap={{ scale: 1 }}
+            className="border-b-2 border-green-300"
+          >
+            <Link
+              // to={"/google"}
+              onClick={toggleSide}
+              className="block text-2xl md:text-3xl  py-1 md:py-3 lg:text-4xl"
+            >
+              About me
+            </Link>
+          </motion.div>
+        </ScrollIntoView>
+        <ScrollIntoView selector="#tech">
+          <motion.div
+            whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
+            whileTap={{ scale: 1 }}
+            className="border-b-2 border-green-300"
+          >
+            <Link
+              // to={"/"}
+              onClick={toggleSide}
+              className="block text-2xl md:text-3xl lg:text-4xl  py-1 md:py-3"
+            >
+              Technologies
+            </Link>
+          </motion.div>
+        </ScrollIntoView>
+        <ScrollIntoView selector="#tech">
+          <motion.div
+            whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
+            whileTap={{ scale: 1 }}
+            className="border-b-2 border-green-300"
+          >
+            <Link
+              // to={"/"}
+              onClick={toggleSide}
+              className="block text-2xl md:text-3xl lg:text-4xl  py-1 md:py-3"
+            >
+              Projects
+            </Link>
+          </motion.div>
+        </ScrollIntoView>
+        <ScrollIntoView selector="#contact">
+          <motion.div
+            whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
+            whileTap={{ scale: 1 }}
+            className="border-b-2 border-green-300"
+          >
+            <Link
+              // to={"/"}
+              onClick={toggleSide}
+              className="block text-2xl md:text-3xl lg:text-4xl  py-1 md:py-3"
+            >
+              Contact
+            </Link>
+          </motion.div>
+        </ScrollIntoView>
       </div>
     </aside>
   );
