@@ -1,19 +1,38 @@
-import React from "react";
+import Navbar from "./components/Navbar";
+import Landing from "./pages/Landing";
+import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Landing from "./components/Landing";
-import Contact from "./pages/Contact";
-import Technologies from "./pages/Technologies";
+import useStore from "./store/store";
+import { useRef } from "react";
 
-const App = () => {
+function App() {
+  const theme = useStore((state) => state.theme);
+  const projects = useRef();
+  const skills = useRef();
+  const contact = useRef();
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-      </Routes>
-      <Technologies />
-      <Contact />
-    </BrowserRouter>
+    <div className={`h-[1000px] ${theme ? "dark" : ""}`}>
+      <div className="dark:bg-zinc-800">
+        <BrowserRouter>
+          <Navbar projects={projects} skills={skills} contact={contact} />
+          <Routes>
+            <Route
+              element={
+                <Landing
+                  projects={projects}
+                  skills={skills}
+                  contact={contact}
+                />
+              }
+              path="/"
+            />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </div>
+    </div>
   );
-};
+}
 
 export default App;

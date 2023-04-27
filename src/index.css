@@ -2,38 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-}
 body {
-  overflow-x: hidden;
-  font-family: "Tilt Warp", cursive;
-  background-image: linear-gradient(
-    to left bottom,
-    #000000,
-    #130f11,
-    #1e191c,
-    #282228,
-    #312c35,
-    #312c35,
-    #312c35,
-    #312c35,
-    #282228,
-    #1e191c,
-    #130f11,
-    #000000
+  font-family: "Inter", sans-serif;
+}
+
+.glassmorph {
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(26px) saturate(130%);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(139, 141, 145, 0.3);
+}
+.glassmorph-nav {
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(100px) saturate(130%);
+  background-color: rgba(128, 118, 118, 0.3);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+.glassmorph-dark {
+  backdrop-filter: blur(10px) saturate(130%);
+  background-color: rgba(61, 61, 61, 0.75);
+  -webkit-backdrop-filter: blur(26px) saturate(130%);
+  border: 1px solid rgba(103, 105, 109, 0.3);
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #383b3d;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.hover-underline-animation-dark {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation-dark::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #c8c8c8;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-underline-animation-dark:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.gradint-text {
+  background: #253c99;
+  background: -webkit-linear-gradient(
+    to bottom right,
+    #253c99 0%,
+    #359c6b 50%,
+    #15ab42 100%
   );
+  background: -moz-linear-gradient(
+    to bottom right,
+    #253c99 0%,
+    #359c6b 50%,
+    #15ab42 100%
+  );
+  background: linear-gradient(
+    to bottom right,
+    #253c99 0%,
+    #359c6b 50%,
+    #15ab42 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.text-shadow {
-  text-shadow: 0px 0px 20px #43c72c;
+
+@keyframes scroll {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
 }
-.glass {
-  /* From https://css.glass */
-  background: rgba(0, 237, 58, 0.13);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(19px);
-  -webkit-backdrop-filter: blur(19px);
-  border: 1.2px solid rgba(0, 237, 59, 0.338);
+
+.animate {
+  animation: scroll 30s linear infinite;
 }
