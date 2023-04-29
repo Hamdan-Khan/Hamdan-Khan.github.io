@@ -22,7 +22,7 @@ const Snippet = () => {
     }, 2500);
   };
   return (
-    <div className="mockup-code sm:flex-grow sm:m-2 pr-2">
+    <div className="mockup-code max-w-[85vw] sm:w-auto sm:flex-grow sm:m-2 pr-2">
       <pre data-prefix="$">
         <code>
           npm install Hamdan{" "}
