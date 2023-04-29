@@ -23,6 +23,11 @@ const certData = [
     institute: "HackerRank",
     link: "https://www.hackerrank.com/certificates/e29460659928",
   },
+  {
+    name: "Rest API Certificate",
+    institute: "HackerRank",
+    link: "https://www.hackerrank.com/certificates/e16600586e95",
+  },
 ];
 
 const Skills = ({ skills }) => {

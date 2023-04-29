@@ -1,135 +1,89 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import ScrollIntoView from "react-scroll-into-view";
+import useStore from "../store/store";
+import linkedin from "../assets/logos/linkedin.png";
+import github from "../assets/logos/github.svg";
 
-const Sidebar = ({ side, toggleSide }) => {
+const socials = [
+  {
+    platform: "LinkedIn",
+    link: "https://www.linkedin.com/in/hamdan-khan-b5a260226/",
+    logo: linkedin,
+  },
+  { platform: "GitHub", link: "https://github.com/Hamdan-Khan", logo: github },
+];
+
+const Sidebar = ({ skills, projects, contact, sidenav, setSidenav }) => {
+  const theme = useStore((state) => state.theme);
   return (
-    <aside
-      className={`bg-green-700 overflow-hidden text-gray-200 z-10 top-0 left-0 ${
-        !side ? "left-[100%]" : ""
-      } fixed w-[100vw] min-h-[400px] duration-300 h-full py-4 md:py-7 pb-12 md:pb-16 px-10 md:px-16`}
+    <div
+      className={`flex flex-col dark:bg-[rgb(23,28,41)] bg-zinc-200 w-[100%] h-screen absolute top-[81px] border-r-[3px] border-r-[rgb(23,28,41)]  ${
+        sidenav ? "left-[-1px] sm:left-[-120%]" : "left-[-120%]"
+      }  duration-500 ease-in-out px-8 pt-8 pb-32 `}
     >
-      <div className="flex flex-col justify-between h-[100%]">
-        <div className="flex flex-row justify-between">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-gray-900">
-            NAVIGATE
-          </h1>
-          <i
-            class="text-2xl md:text-3xl lg:text-4xl cursor-pointer fa-sharp fa-solid fa-xmark"
-            onClick={toggleSide}
-          ></i>
-        </div>
-        {/* <motion.div
-          whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
-          whileTap={{ scale: 1 }}
-          className="border-b-2 border-green-300"
-        >
-          <Link
-            to={"/google"}
-            className="block text-2xl md:text-3xl  py-1 md:py-3 lg:text-4xl"
+      <ul className="text-3xl dark:text-zinc-100">
+        <li className="py-2 border-b border-zinc-400">
+          <h3
+            className={`font-medium cursor-pointer pl-2 pt-6 pb-2`}
+            onClick={() => {
+              skills.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+              });
+              setSidenav(false);
+            }}
           >
-            About me
-          </Link>
-        </motion.div>
-        <motion.div
-          whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
-          whileTap={{ scale: 1 }}
-          className="border-b-2 border-green-300"
-        >
-          <Link
-            to={"/"}
-            className="block text-2xl md:text-3xl lg:text-4xl  py-1 md:py-3"
-          >
-            Technologies
-          </Link>
-        </motion.div>
-        <motion.div
-          whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
-          whileTap={{ scale: 1 }}
-          className="border-b-2 border-green-300"
-        >
-          <Link
-            to={"/"}
-            className="block text-2xl md:text-3xl lg:text-4xl  py-1 md:py-3"
+            About
+          </h3>
+        </li>
+        <li className="py-2 border-b border-zinc-400">
+          <h3
+            className={`font-medium cursor-pointer pl-2 pt-6 pb-2`}
+            onClick={() => {
+              projects.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+              });
+              setSidenav(false);
+            }}
           >
             Projects
-          </Link>
-        </motion.div>
-        <motion.div
-          whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
-          whileTap={{ scale: 1 }}
-          className="border-b-2 border-green-300"
-        >
-          <Link
-            to={"/"}
-            className="block text-2xl md:text-3xl lg:text-4xl  py-1 md:py-3"
+          </h3>
+        </li>
+        <li className="py-2 border-b border-zinc-400">
+          <h3
+            className={`font-medium cursor-pointer pl-2 pt-6 pb-2`}
+            onClick={() => {
+              contact.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+              });
+              setSidenav(false);
+            }}
           >
             Contact
-          </Link>
-        </motion.div> */}
-        <ScrollIntoView selector="#landing">
-          <motion.div
-            whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
-            whileTap={{ scale: 1 }}
-            className="border-b-2 border-green-300"
-          >
-            <Link
-              // to={"/google"}
-              onClick={toggleSide}
-              className="block text-2xl md:text-3xl  py-1 md:py-3 lg:text-4xl"
-            >
-              About me
-            </Link>
-          </motion.div>
-        </ScrollIntoView>
-        <ScrollIntoView selector="#tech">
-          <motion.div
-            whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
-            whileTap={{ scale: 1 }}
-            className="border-b-2 border-green-300"
-          >
-            <Link
-              // to={"/"}
-              onClick={toggleSide}
-              className="block text-2xl md:text-3xl lg:text-4xl  py-1 md:py-3"
-            >
-              Technologies
-            </Link>
-          </motion.div>
-        </ScrollIntoView>
-        <ScrollIntoView selector="#tech">
-          <motion.div
-            whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
-            whileTap={{ scale: 1 }}
-            className="border-b-2 border-green-300"
-          >
-            <Link
-              // to={"/"}
-              onClick={toggleSide}
-              className="block text-2xl md:text-3xl lg:text-4xl  py-1 md:py-3"
-            >
-              Projects
-            </Link>
-          </motion.div>
-        </ScrollIntoView>
-        <ScrollIntoView selector="#contact">
-          <motion.div
-            whileHover={{ scale: 1.07, transition: { duration: 0.4 } }}
-            whileTap={{ scale: 1 }}
-            className="border-b-2 border-green-300"
-          >
-            <Link
-              // to={"/"}
-              onClick={toggleSide}
-              className="block text-2xl md:text-3xl lg:text-4xl  py-1 md:py-3"
-            >
-              Contact
-            </Link>
-          </motion.div>
-        </ScrollIntoView>
+          </h3>
+        </li>
+      </ul>
+      <div className="flex justify-evenly mt-auto">
+        {socials.map((social) => {
+          const { platform, logo, link } = social;
+          return (
+            <a href={link}>
+              <img
+                src={logo}
+                alt={platform}
+                className={`w-[50px] ${
+                  platform == "GitHub" ? "dark:invert" : ""
+                }`}
+              />
+            </a>
+          );
+        })}
       </div>
-    </aside>
+    </div>
   );
 };
 

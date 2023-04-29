@@ -1,6 +1,8 @@
 import { useState } from "react";
 import useStore from "../store/store";
 import SwapIcon from "./SwapIcon";
+import Sidebar from "./Sidebar";
+import NavbarMenu from "./NavbarMenu";
 
 const Navbar = ({ projects, skills, contact }) => {
   const theme = useStore((state) => state.theme);
@@ -18,129 +20,15 @@ const Navbar = ({ projects, skills, contact }) => {
         <a href="/">Hamdan K.</a>
       </h1>
       <div className="flex overflow-hidden">
-        {/* Navbar Links */}
-        <ul className="hidden sm:flex flex-row items-center gap-8 lg:pr-8 sm:px-3 md:pr-5 text-lg dark:text-zinc-200">
-          <li>
-            <h3
-              className={`${
-                !theme
-                  ? "hover-underline-animation"
-                  : "hover-underline-animation-dark"
-              } font-medium cursor-pointer`}
-              onClick={() =>
-                skills.current.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                  inline: "nearest",
-                })
-              }
-            >
-              About
-            </h3>
-          </li>
-          <li>
-            <h3
-              className={`${
-                !theme
-                  ? "hover-underline-animation"
-                  : "hover-underline-animation-dark"
-              } font-medium cursor-pointer`}
-              onClick={() =>
-                projects.current.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                  inline: "nearest",
-                })
-              }
-            >
-              Projects
-            </h3>
-          </li>
-          <li>
-            <h3
-              className={`${
-                !theme
-                  ? "hover-underline-animation"
-                  : "hover-underline-animation-dark"
-              } font-medium cursor-pointer`}
-              onClick={() =>
-                contact.current.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                  inline: "nearest",
-                })
-              }
-            >
-              Contact
-            </h3>
-          </li>
-        </ul>
-        {/* SideBar */}
-        <div
-          className={`dark:bg-[rgb(23,28,41)] bg-zinc-200 w-[100%] h-screen absolute top-[81px] border-r-[3px] dark:border-r-blue-400  ${
-            sidenav ? "left-[-1px]" : "left-[-120%]"
-          }  duration-500 ease-in-out`}
-        >
-          <ul>
-            <li>
-              <h3
-                className={`${
-                  !theme
-                    ? "hover-underline-animation"
-                    : "hover-underline-animation-dark"
-                } font-medium cursor-pointer`}
-                onClick={() => {
-                  skills.current.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                    inline: "nearest",
-                  });
-                  setSidenav(false);
-                }}
-              >
-                About
-              </h3>
-            </li>
-            <li>
-              <h3
-                className={`${
-                  !theme
-                    ? "hover-underline-animation"
-                    : "hover-underline-animation-dark"
-                } font-medium cursor-pointer`}
-                onClick={() => {
-                  projects.current.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                    inline: "nearest",
-                  });
-                  setSidenav(false);
-                }}
-              >
-                Projects
-              </h3>
-            </li>
-            <li>
-              <h3
-                className={`${
-                  !theme
-                    ? "hover-underline-animation"
-                    : "hover-underline-animation-dark"
-                } font-medium cursor-pointer`}
-                onClick={() => {
-                  contact.current.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                    inline: "nearest",
-                  });
-                  setSidenav(false);
-                }}
-              >
-                Contact
-              </h3>
-            </li>
-          </ul>
-        </div>
+        <NavbarMenu skills={skills} projects={projects} contact={contact} />
+
+        <Sidebar
+          skills={skills}
+          projects={projects}
+          contact={contact}
+          sidenav={sidenav}
+          setSidenav={setSidenav}
+        />
 
         {/* DarkMode Toggle */}
         <div className="form-control ml-2 flex items-center justify-center p-1 border-[2px] rounded-xl dark:border-white border-transparent mr-5 sm:mr-1">

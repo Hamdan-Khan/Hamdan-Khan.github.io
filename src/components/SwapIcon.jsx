@@ -8,6 +8,7 @@ const SwapIcon = ({ sidenav, setSidenav }) => {
         onClick={() => {
           setSidenav(!sidenav);
         }}
+        checked={sidenav}
       />
 
       <svg
