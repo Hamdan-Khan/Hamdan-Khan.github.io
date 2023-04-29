@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className={`h-[1000px] ${theme ? "dark" : ""}`}>
-      <div className="dark:bg-zinc-800">
+      <div className="dark:bg-[rgb(27,31,42)]">
         <BrowserRouter>
           <Navbar projects={projects} skills={skills} contact={contact} />
           <Routes>

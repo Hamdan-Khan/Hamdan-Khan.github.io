@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import useStore from "../store/store";
 import SwapIcon from "./SwapIcon";
 
@@ -77,19 +77,73 @@ const Navbar = ({ projects, skills, contact }) => {
         </ul>
         {/* SideBar */}
         <div
-          className={`dark:bg-zinc-600 bg-zinc-200 w-[101%] h-screen absolute top-[81px] ${
+          className={`dark:bg-[rgb(23,28,41)] bg-zinc-200 w-[100%] h-screen absolute top-[81px] border-r-[3px] dark:border-r-blue-400  ${
             sidenav ? "left-[-1px]" : "left-[-120%]"
           }  duration-500 ease-in-out`}
-        ></div>
-        {/* <div
-          className={`bg-zinc-400 absolute top-[81px] ${
-            sidenav ? "opacity-60 z-30" : "opacity-0 -z-20"
-          } duration-[1000ms] w-[32%] left-[68%] h-screen cursor-pointer`}
-          onClick={() => setSidenav(false)}
-        ></div> */}
+        >
+          <ul>
+            <li>
+              <h3
+                className={`${
+                  !theme
+                    ? "hover-underline-animation"
+                    : "hover-underline-animation-dark"
+                } font-medium cursor-pointer`}
+                onClick={() => {
+                  skills.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "nearest",
+                  });
+                  setSidenav(false);
+                }}
+              >
+                About
+              </h3>
+            </li>
+            <li>
+              <h3
+                className={`${
+                  !theme
+                    ? "hover-underline-animation"
+                    : "hover-underline-animation-dark"
+                } font-medium cursor-pointer`}
+                onClick={() => {
+                  projects.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "nearest",
+                  });
+                  setSidenav(false);
+                }}
+              >
+                Projects
+              </h3>
+            </li>
+            <li>
+              <h3
+                className={`${
+                  !theme
+                    ? "hover-underline-animation"
+                    : "hover-underline-animation-dark"
+                } font-medium cursor-pointer`}
+                onClick={() => {
+                  contact.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "nearest",
+                  });
+                  setSidenav(false);
+                }}
+              >
+                Contact
+              </h3>
+            </li>
+          </ul>
+        </div>
 
         {/* DarkMode Toggle */}
-        <div className="form-control ml-2 flex items-center justify-center p-1 border-[2px] rounded-xl dark:border-white border-transparent">
+        <div className="form-control ml-2 flex items-center justify-center p-1 border-[2px] rounded-xl dark:border-white border-transparent mr-5 sm:mr-1">
           <label className="swap swap-rotate dark:text-white">
             <input
               type="checkbox"

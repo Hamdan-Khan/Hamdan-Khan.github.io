@@ -5,7 +5,7 @@ const Contact = ({ contact }) => {
   return (
     <div
       ref={contact}
-      className="px-6 sm:px-10 md:px-12 py-8 border-y-[2px] dark:text-white border-zinc-500 border-dashed scroll-m-20"
+      className="px-6 sm:px-10 md:px-12 py-8 border-y-[2px] dark:text-white border-zinc-500 border-dashed scroll-m-28 sm:scroll-m-20"
     >
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-5 text-center">
         GET IN TOUCH WITH ME
