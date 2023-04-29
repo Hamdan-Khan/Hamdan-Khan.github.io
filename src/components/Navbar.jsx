@@ -38,6 +38,7 @@ const Navbar = ({ projects, skills, contact }) => {
               onClick={() => {
                 setTheme(!theme);
               }}
+              checked={theme}
             />
 
             <svg
