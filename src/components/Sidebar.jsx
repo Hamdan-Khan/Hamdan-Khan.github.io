@@ -1,5 +1,4 @@
 import React from "react";
-import useStore from "../store/store";
 import linkedin from "../assets/logos/linkedin.png";
 import github from "../assets/logos/github.svg";
 
@@ -13,12 +12,11 @@ const socials = [
 ];
 
 const Sidebar = ({ skills, projects, contact, sidenav, setSidenav }) => {
-  const theme = useStore((state) => state.theme);
   return (
     <div
       className={`flex flex-col dark:bg-[rgb(23,28,41)] bg-zinc-200 w-[100%] h-screen absolute top-[81px] border-r-[3px] border-r-[rgb(23,28,41)]  ${
         sidenav ? "left-[-1px] sm:left-[-120%]" : "left-[-120%]"
-      }  duration-500 ease-in-out px-8 pt-8 pb-32 `}
+      }  duration-500 ease-in-out px-8 pt-8 pb-32 touch-none `}
     >
       <ul className="text-3xl dark:text-zinc-100">
         <li className="py-2 border-b border-zinc-400">
@@ -67,7 +65,7 @@ const Sidebar = ({ skills, projects, contact, sidenav, setSidenav }) => {
           </h3>
         </li>
       </ul>
-      <div className="flex justify-evenly mt-auto">
+      <div className="flex justify-evenly mt-16">
         {socials.map((social) => {
           const { platform, logo, link } = social;
           return (
