@@ -5,6 +5,9 @@
 body {
   font-family: "Inter", sans-serif;
 }
+.inter {
+  font-family: "Inter", sans-serif;
+}
 
 .glassmorph {
   backdrop-filter: blur(10px) saturate(130%);

@@ -7,7 +7,7 @@ import Skills from "../components/Skills";
 const Landing = ({ projects, skills, contact }) => {
   return (
     <div>
-      <Hero />
+      <Hero skills={skills} />
       <Skills skills={skills} />
       <Projects projects={projects} />
       <Contact contact={contact} />

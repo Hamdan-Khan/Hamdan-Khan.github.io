@@ -1,6 +1,6 @@
 import Snippet from "./Snippet";
 
-const Hero = () => {
+const Hero = ({ skills }) => {
   return (
     <div
       id="hero"
@@ -13,8 +13,22 @@ const Hero = () => {
         <h2 className="text-lg sm:text-2xl font-semibold text-center dark:text-zinc-200 leading-6 sm:leading-normal">
           MY NAME IS{" "}
           <span className="font-extrabold gradint-text">HAMDAN KHAN</span> AND I
-          AM A WEB DEVELOPER
+          AM A FULL STACK WEB DEVELOPER.
         </h2>
+        <div className="flex gap-6 justify-center mt-2">
+          <button
+            className="bg-green-500 dark:bg-green-600 dark:hover:bg-green-500 hover:shadow-md hover:bg-green-600 duration-200 font-semibold text-white rounded-xl py-1 px-12 text-lg sm:text-xl"
+            onClick={() =>
+              skills.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+              })
+            }
+          >
+            ABOUT ME
+          </button>
+        </div>
       </div>
       <Snippet />
     </div>
