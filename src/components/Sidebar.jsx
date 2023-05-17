@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import linkedin from "../assets/logos/linkedin.png";
 import github from "../assets/logos/github.svg";
+import dropdown from "../assets/icons/dropdown.svg";
 
 const socials = [
   {
@@ -12,6 +13,11 @@ const socials = [
 ];
 
 const Sidebar = ({ skills, projects, contact, sidenav, setSidenav }) => {
+  const [drop, setDrop] = useState(false);
+
+  const toggleDropDown = () => {
+    setDrop(!drop);
+  };
   return (
     <div
       className={`flex flex-col dark:bg-[rgb(23,28,41)] bg-zinc-200 w-[100%] h-screen absolute top-[81px] border-r-[3px] border-r-[rgb(23,28,41)]  ${
@@ -64,12 +70,52 @@ const Sidebar = ({ skills, projects, contact, sidenav, setSidenav }) => {
             Contact
           </h3>
         </li>
+        <li className="py-2 border-b border-zinc-400">
+          <div
+            className="pl-2 pt-6 pb-2 cursor-pointer select-none"
+            onClick={() => toggleDropDown()}
+          >
+            <label
+              tabIndex={0}
+              className="cursor-pointer w-full font-medium select-none"
+            >
+              Playground
+              <span>
+                <img
+                  src={dropdown}
+                  className={`${
+                    drop ? "rotate-180" : ""
+                  } inline dark:invert w-10`}
+                  alt=""
+                />
+              </span>
+            </label>
+            <ul
+              tabIndex={0}
+              className={`${drop ? "block" : "hidden"}  p-1 w-full `}
+            >
+              <a
+                href="https://hamdan-k.me/flexbox-playground/"
+                className="py-3 border-b block dark:border-zinc-500 border-zinc-400 dark:text-white text-xl sm:text-base"
+              >
+                FlexBox Playground ✨
+              </a>
+
+              <a
+                href="https://hamdan-k.me/api-playground/"
+                className="py-3 pb-4 block dark:text-white text-xl sm:text-base"
+              >
+                API Playground ✨
+              </a>
+            </ul>
+          </div>
+        </li>
       </ul>
       <div className="flex justify-evenly mt-16">
         {socials.map((social) => {
           const { platform, logo, link } = social;
           return (
-            <a href={link}>
+            <a href={link} key={platform}>
               <img
                 src={logo}
                 alt={platform}

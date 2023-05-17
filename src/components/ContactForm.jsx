@@ -49,7 +49,11 @@ const ContactForm = () => {
     >
       {toast !== "" ? (
         <div className="toast duration-200 z-50">
-          <div className={`alert alert-${toast} text-white`}>
+          <div
+            className={`alert ${
+              toast === "error" ? "bg-red-400" : "bg-green-400"
+            } text-white`}
+          >
             <div>
               <span>
                 {toast === "error"
@@ -69,15 +73,7 @@ const ContactForm = () => {
         ""
       )}
       <label className=" pl-1 font-semibold">Your Name</label>
-      {/* <div className="toast toast-center duration-200">
-        <div className={`alert alert-error text-white`}>
-          <div>
-            <span>
-              "Message sent succesfully! You will recieve a response shortly 😁
-            </span>
-          </div>
-        </div>
-      </div> */}
+
       <input
         className="border border-zinc-300 bg-transparent focus:outline-none focus:ring-1 rounded-lg px-2 py-1  dark:border-zinc-600 dark:text-black dark:bg-zinc-200 mb-3"
         type="text"

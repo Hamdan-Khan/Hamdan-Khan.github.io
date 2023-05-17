@@ -31,6 +31,7 @@ const Snippet = () => {
               <span
                 className="ml-2 mb-1 text-white cursor-pointer py-2 px-1 rounded-lg inter bg-green-500 dark:bg-green-600"
                 onClick={codeStart}
+                title="Runs the silly code"
               >
                 Run{" "}
                 <svg
@@ -48,6 +49,7 @@ const Snippet = () => {
               snippet === "result" && (
                 <span
                   className="ml-2 mb-1 text-zinc-100 cursor-pointer pb-2 pt-1 px-1 rounded-lg inter bg-yellow-500"
+                  title="Re-run code"
                   onClick={codeStart}
                 >
                   <svg

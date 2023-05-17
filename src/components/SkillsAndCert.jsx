@@ -56,7 +56,7 @@ const SkillsAndCert = ({ tab, setTab }) => {
                     <a
                       href={link}
                       target="_blank"
-                      className="dark:text-zinc-300 hover:underline"
+                      className="dark:text-zinc-300 hover:underline text-sm ibm-plex font-normal"
                     >
                       {institute} <span>&#8599;</span>
                     </a>

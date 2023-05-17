@@ -35,11 +35,34 @@ const images = [
 
 const SkillsSlider = () => {
   return (
-    <div className="flex items-center justify-center dark:bg-zinc-300">
+    <div className="flex items-center justify-center dark:bg-slate-600">
       {/* 1. */}
       <div className="w-[2000px] flex items-center h-[8rem] border-t border-b dark:border-gray-600 border-zinc-300 overflow-hidden relative ">
         {/* 2. */}
-        <div className="w-[2000px] h-20 flex items-center  justify-around absolute left-0 animate">
+        <div className="w-[2000px] h-20 hidden items-center sm:flex justify-around absolute left-0 animate">
+          {/* 3 */}
+          {images.map((i, index) => {
+            return (
+              <div
+                key={index + 1}
+                className="flex justify-center items-start mx-3"
+              >
+                <img src={i} className=" w-[20rem]" />
+              </div>
+            );
+          })}
+          {images.map((i, index) => {
+            return (
+              <div
+                key={index + 1}
+                className="flex justify-center items-start mx-3"
+              >
+                <img src={i} className=" w-[20rem]" />
+              </div>
+            );
+          })}
+        </div>
+        <div className="w-[2000px] h-20 flex items-center sm:hidden  justify-around absolute left-0 animate-small">
           {/* 3 */}
           {images.map((i, index) => {
             return (
