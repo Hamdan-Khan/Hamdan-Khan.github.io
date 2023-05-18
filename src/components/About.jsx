@@ -1,8 +1,16 @@
 import React from "react";
 import doomer from "../assets/doomer.png";
 import download from "../assets/icons/download.svg";
+import resume from "../assets/docs/Hamdan-Khan-resume.pdf";
+import { saveAs } from "file-saver";
 
 const About = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = resume;
+    link.download = "Hamdan_resume.pdf";
+    link.click();
+  };
   return (
     <div>
       <h1 className="dark:text-white my-7 text-3xl sm:text-4xl text-center font-bold">
@@ -28,7 +36,10 @@ const About = () => {
             and doing freelancing. I'm passionate about tackling new challenges
             and learning from the best in the industry.
           </p>
-          <button className="bg-yellow-500 mt-2 w-[93%] mx-auto md:w-auto md:mr-3 dark:bg-yellow-600 dark:hover:bg-yellow-500 hover:shadow-md hover:bg-yellow-600 duration-200 font-semibold text-white rounded-xl py-1 px-8 text-lg sm:text-xl">
+          <button
+            onClick={handleDownload}
+            className="bg-yellow-500 mt-2 w-[93%] mx-auto md:w-auto md:mr-3 dark:bg-yellow-600 dark:hover:bg-yellow-500 hover:shadow-md hover:bg-yellow-600 duration-200 font-semibold text-white rounded-xl py-1 px-8 text-lg sm:text-xl"
+          >
             Resume{"  "}
             <img src={download} className="w-[16px] inline invert" />
           </button>
