@@ -2,7 +2,6 @@ import React from "react";
 import doomer from "../assets/doomer.png";
 import download from "../assets/icons/download.svg";
 import resume from "../assets/docs/Hamdan-Khan-resume.pdf";
-import { saveAs } from "file-saver";
 
 const About = () => {
   const handleDownload = () => {
