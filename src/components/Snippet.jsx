@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Snippet = () => {
   const [snippet, setSnippet] = useState("one");
@@ -22,7 +23,12 @@ const Snippet = () => {
     }, 2500);
   };
   return (
-    <div className="mockup-code max-w-[85vw] sm:w-auto sm:flex-grow sm:m-2 pr-2 dark:bg-zinc-600">
+    <motion.div
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1.4, ease: "easeInOut" }}
+      className="mockup-code max-w-[85vw] sm:w-auto sm:flex-grow sm:m-2 pr-2 dark:bg-zinc-600"
+    >
       <pre data-prefix="$">
         <code>
           npm install Hamdan{" "}
@@ -80,7 +86,7 @@ const Snippet = () => {
           <code>Hamdan hates CSS :{"("}</code>
         </pre>
       )}
-    </div>
+    </motion.div>
   );
 };
 

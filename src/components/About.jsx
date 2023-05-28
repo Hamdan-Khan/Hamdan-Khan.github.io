@@ -1,22 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
 import doomer from "../assets/doomer.png";
 import download from "../assets/icons/download.svg";
 import resume from "../assets/docs/Hamdan-Khan-resume.pdf";
-import { saveAs } from "file-saver";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const boxVariant = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, y: 50 },
+};
 
 const About = () => {
+  // Resume Download Logic
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = resume;
     link.download = "Hamdan_resume.pdf";
     link.click();
   };
+
+  // Scroll Animation Logic
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
+
   return (
     <div>
       <h1 className="dark:text-white my-7 text-3xl sm:text-4xl text-center font-bold">
         ABOUT ME
       </h1>
-      <div className="bg-zinc-100 border-zinc-400 dark:border-zinc-500 border p-4 flex md:flex-row md:gap-4 flex-col gap-2 mb-5 rounded-md dark:bg-zinc-700 dark:text-white">
+      <motion.div
+        ref={ref}
+        variants={boxVariant}
+        initial="hidden"
+        animate={control}
+        className="bg-zinc-100 border-zinc-400 dark:border-zinc-500 border p-4 flex md:flex-row md:gap-4 flex-col gap-2 mb-5 rounded-md dark:bg-zinc-700 dark:text-white"
+      >
         <div className="md:w-[45%] my-auto">
           <img
             src={doomer}
@@ -44,7 +68,7 @@ const About = () => {
             <img src={download} className="w-[16px] inline invert" />
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

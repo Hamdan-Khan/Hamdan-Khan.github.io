@@ -10,7 +10,7 @@ const Projects = ({ projects }) => {
       <h1 className="text-4xl text-center font-bold my-7 dark:text-white">
         PROJECTS
       </h1>
-      <div className="flex justify-center flex-wrap gap-2 sm:gap-4">
+      <div className="flex justify-center flex-wrap gap-3 sm:gap-4">
         {projectData.map((project) => {
           const { title, description, image, live, github } = project;
           return (
