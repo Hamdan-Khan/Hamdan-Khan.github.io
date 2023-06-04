@@ -1,14 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useStore from "../store/store";
 import dropdown from "../assets/icons/dropdown.svg";
 
 const NavbarMenu = ({ skills, projects, contact }) => {
   const theme = useStore((state) => state.theme);
   const [drop, setDrop] = useState(false);
+  const [toast, setToast] = useState("");
+  const [timeoutId, setTimeoutId] = useState();
 
   const toggleDropDown = () => {
     setDrop(!drop);
   };
+  useEffect(() => {
+    if (toast === "api") {
+      const timeout = setTimeout(() => {
+        setToast("");
+      }, 4000);
+      setTimeoutId(timeout);
+    }
+    return () => clearTimeout(timeoutId);
+  }, [toast]);
   return (
     <ul className="hidden sm:flex flex-row items-center sm:gap-4 md:gap-8 lg:pr-8 sm:px-3 md:pr-5 text-lg dark:text-zinc-200">
       <li>
@@ -100,9 +111,12 @@ const NavbarMenu = ({ skills, projects, contact }) => {
             </li>
             <li>
               <a
-                href="https://hamdan-k.me/api-playground/"
+                href="#"
                 className="dark:text-white text-base"
-                onClick={() => setDrop(false)}
+                onClick={() => {
+                  setDrop(false);
+                  setToast("api");
+                }}
               >
                 ✨API Playground
               </a>
@@ -110,6 +124,25 @@ const NavbarMenu = ({ skills, projects, contact }) => {
           </ul>
         </div>
       </li>
+      {toast === "api" ? (
+        <div className="fixed top-[88vh] right-3 duration-200 z-50">
+          <div className="alert bg-green-500 font-semibold text-white">
+            <div>
+              <span>
+                API Playground Coming Soon! 😁
+                <span
+                  className="px-4 py-1 cursor-pointer"
+                  onClick={() => setToast("")}
+                >
+                  &#10006;
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
     </ul>
   );
 };
