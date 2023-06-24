@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useStore from "../store/store";
 import dropdown from "../assets/icons/dropdown.svg";
 
-const NavbarMenu = ({ skills, projects, contact }) => {
+const NavbarMenu = ({ skills, projects, contact, blogs }) => {
   const theme = useStore((state) => state.theme);
   const [drop, setDrop] = useState(false);
 
@@ -46,6 +46,24 @@ const NavbarMenu = ({ skills, projects, contact }) => {
           }
         >
           Projects
+        </h3>
+      </li>
+      <li>
+        <h3
+          className={`${
+            !theme
+              ? "hover-underline-animation"
+              : "hover-underline-animation-dark"
+          } font-medium cursor-pointer`}
+          onClick={() =>
+            blogs.current.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+              inline: "nearest",
+            })
+          }
+        >
+          Blogs
         </h3>
       </li>
       <li>

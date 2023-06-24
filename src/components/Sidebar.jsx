@@ -12,7 +12,7 @@ const socials = [
   { platform: "GitHub", link: "https://github.com/Hamdan-Khan", logo: github },
 ];
 
-const Sidebar = ({ skills, projects, contact, sidenav, setSidenav }) => {
+const Sidebar = ({ skills, projects, blogs, contact, sidenav, setSidenav }) => {
   const [drop, setDrop] = useState(false);
 
   const toggleDropDown = () => {
@@ -53,6 +53,21 @@ const Sidebar = ({ skills, projects, contact, sidenav, setSidenav }) => {
             }}
           >
             Projects
+          </h3>
+        </li>
+        <li className="py-2 border-b border-zinc-400">
+          <h3
+            className={`font-medium cursor-pointer pl-2 pt-6 pb-2`}
+            onClick={() => {
+              blogs.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+              });
+              setSidenav(false);
+            }}
+          >
+            Blogs
           </h3>
         </li>
         <li className="py-2 border-b border-zinc-400">

@@ -4,7 +4,7 @@ import SwapIcon from "./SwapIcon";
 import Sidebar from "./Sidebar";
 import NavbarMenu from "./NavbarMenu";
 
-const Navbar = ({ projects, skills, contact }) => {
+const Navbar = ({ projects, skills, contact, blogs }) => {
   const theme = useStore((state) => state.theme);
   const setTheme = useStore((state) => state.setTheme);
   const [sidenav, setSidenav] = useState(false);
@@ -20,13 +20,19 @@ const Navbar = ({ projects, skills, contact }) => {
         <a href="/">Hamdan K.</a>
       </h1>
       <div className="flex overflow-hidden">
-        <NavbarMenu skills={skills} projects={projects} contact={contact} />
+        <NavbarMenu
+          skills={skills}
+          projects={projects}
+          contact={contact}
+          blogs={blogs}
+        />
 
         <Sidebar
           skills={skills}
           projects={projects}
           contact={contact}
           sidenav={sidenav}
+          blogs={blogs}
           setSidenav={setSidenav}
         />
 

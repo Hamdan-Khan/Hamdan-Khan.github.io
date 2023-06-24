@@ -19,7 +19,7 @@ const socials = [
 
 const Connect = () => {
   return (
-    <div className="px-10 py-5 sm:py-8 dark:text-white flex flex-col gap-4 sm:flex-row items-center justify-evenly">
+    <div className="px-10 py-5 sm:py-8 dark:text-white flex flex-col gap-4 sm:flex-row items-center justify-evenly bg-slate-100 dark:bg-slate-800">
       <h2 className="text-2xl uppercase font-bold">Connect with me</h2>
       <div className="flex justify-center gap-7 items-center">
         {socials.map((s) => {
