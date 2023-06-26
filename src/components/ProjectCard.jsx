@@ -1,6 +1,7 @@
 import { useAnimation, motion } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import LazyLoad from "react-lazy-load";
 
 const boxVariant = {
   visible: { opacity: 1, y: 0, transition: { duration: 1 } },
@@ -27,7 +28,9 @@ const ProjectCard = ({ img, title, description, live, github }) => {
       className="card card-compact w-80 bg-base-100 shadow-xl border border-zinc-200 dark:border-none dark:text-white dark:shadow-zinc-800 dark:bg-zinc-600"
     >
       <figure className="border-b border-zinc-300 cursor-pointer">
-        <img src={img} alt="Shoes" />
+        <LazyLoad height="200px" offset="20px">
+          <img src={img} alt="Shoes" />
+        </LazyLoad>
       </figure>
       <div className="card-body px-3">
         <h2 className="card-title font-bold">{title}</h2>

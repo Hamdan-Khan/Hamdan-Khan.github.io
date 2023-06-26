@@ -1,5 +1,6 @@
-import ProjectCard from "./ProjectCard";
+import React, { Suspense } from "react";
 import { projectData } from "../data/ProjectsData";
+const ProjectCard = React.lazy(() => import("./ProjectCard"));
 
 const Projects = ({ projects }) => {
   return (
@@ -11,19 +12,21 @@ const Projects = ({ projects }) => {
         PROJECTS
       </h1>
       <div className="flex justify-center flex-wrap gap-3 sm:gap-4">
-        {projectData.map((project) => {
-          const { title, description, image, live, github } = project;
-          return (
-            <ProjectCard
-              key={title}
-              title={title}
-              description={description}
-              img={image}
-              live={live}
-              github={github}
-            />
-          );
-        })}
+        <Suspense fallback={<div>Loading...</div>}>
+          {projectData.map((project) => {
+            const { title, description, image, live, github } = project;
+            return (
+              <ProjectCard
+                key={title}
+                title={title}
+                description={description}
+                img={image}
+                live={live}
+                github={github}
+              />
+            );
+          })}
+        </Suspense>
       </div>
     </div>
   );
