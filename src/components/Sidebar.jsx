@@ -26,7 +26,7 @@ const Sidebar = ({ skills, projects, blogs, contact, sidenav, setSidenav }) => {
     >
       <ul className="text-3xl dark:text-zinc-100">
         <li className="py-2 border-b border-zinc-400">
-          <h3
+          <p
             className={`font-medium cursor-pointer pl-2 pt-6 pb-2`}
             onClick={() => {
               skills.current.scrollIntoView({
@@ -38,10 +38,10 @@ const Sidebar = ({ skills, projects, blogs, contact, sidenav, setSidenav }) => {
             }}
           >
             About
-          </h3>
+          </p>
         </li>
         <li className="py-2 border-b border-zinc-400">
-          <h3
+          <p
             className={`font-medium cursor-pointer pl-2 pt-6 pb-2`}
             onClick={() => {
               projects.current.scrollIntoView({
@@ -53,10 +53,10 @@ const Sidebar = ({ skills, projects, blogs, contact, sidenav, setSidenav }) => {
             }}
           >
             Projects
-          </h3>
+          </p>
         </li>
         <li className="py-2 border-b border-zinc-400">
-          <h3
+          <p
             className={`font-medium cursor-pointer pl-2 pt-6 pb-2`}
             onClick={() => {
               blogs.current.scrollIntoView({
@@ -68,10 +68,10 @@ const Sidebar = ({ skills, projects, blogs, contact, sidenav, setSidenav }) => {
             }}
           >
             Blogs
-          </h3>
+          </p>
         </li>
         <li className="py-2 border-b border-zinc-400">
-          <h3
+          <p
             className={`font-medium cursor-pointer pl-2 pt-6 pb-2`}
             onClick={() => {
               contact.current.scrollIntoView({
@@ -83,7 +83,7 @@ const Sidebar = ({ skills, projects, blogs, contact, sidenav, setSidenav }) => {
             }}
           >
             Contact
-          </h3>
+          </p>
         </li>
         <li className="py-2 border-b border-zinc-400">
           <div

@@ -65,7 +65,7 @@ const About = () => {
             className="bg-yellow-500 mt-2 w-[93%] mx-auto md:w-auto md:mr-3 dark:bg-yellow-600 dark:hover:bg-yellow-500 hover:shadow-md hover:bg-yellow-600 duration-200 font-semibold text-white rounded-xl py-1 px-8 text-lg sm:text-xl"
           >
             Resume{"  "}
-            <img src={download} className="w-[16px] inline invert" />
+            <img src={download} alt="↓" className="w-[16px] inline invert" />
           </button>
         </div>
       </motion.div>

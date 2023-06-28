@@ -13,7 +13,7 @@ const NavbarMenu = ({ skills, projects, contact, blogs }) => {
   return (
     <ul className="hidden sm:flex flex-row items-center sm:gap-4 md:gap-8 lg:pr-8 sm:px-3 md:pr-5 text-lg dark:text-zinc-200">
       <li>
-        <h3
+        <p
           className={`${
             !theme
               ? "hover-underline-animation"
@@ -28,10 +28,10 @@ const NavbarMenu = ({ skills, projects, contact, blogs }) => {
           }
         >
           About
-        </h3>
+        </p>
       </li>
       <li>
-        <h3
+        <p
           className={`${
             !theme
               ? "hover-underline-animation"
@@ -46,10 +46,10 @@ const NavbarMenu = ({ skills, projects, contact, blogs }) => {
           }
         >
           Projects
-        </h3>
+        </p>
       </li>
       <li>
-        <h3
+        <p
           className={`${
             !theme
               ? "hover-underline-animation"
@@ -64,10 +64,10 @@ const NavbarMenu = ({ skills, projects, contact, blogs }) => {
           }
         >
           Blogs
-        </h3>
+        </p>
       </li>
       <li>
-        <h3
+        <p
           className={`${
             !theme
               ? "hover-underline-animation"
@@ -82,7 +82,7 @@ const NavbarMenu = ({ skills, projects, contact, blogs }) => {
           }
         >
           Contact
-        </h3>
+        </p>
       </li>
       <li>
         <div className="">

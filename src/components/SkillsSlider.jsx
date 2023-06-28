@@ -20,17 +20,17 @@ import next from "../assets/logos/next.png";
 //   { name: "MongoDB", img: mongodb },
 //   { name: "Python", img: python },
 // ];
-const images = [
-  html,
-  css,
-  js,
-  react,
-  tailwind,
-  nodejs,
-  express,
-  mongodb,
-  next,
-  python,
+const skills = [
+  { image: html, name: "HTML" },
+  { image: css, name: "CSS" },
+  { image: js, name: "JavaScript" },
+  { image: react, name: "React" },
+  { image: tailwind, name: "Tailwind CSS" },
+  { image: nodejs, name: "Node JS" },
+  { image: express, name: "Express JS" },
+  { image: mongodb, name: "MongoDB" },
+  { image: next, name: "Next JS" },
+  { image: python, name: "Python" },
 ];
 
 const SkillsSlider = () => {
@@ -41,46 +41,38 @@ const SkillsSlider = () => {
         {/* 2. */}
         <div className="w-[2000px] h-20 hidden items-center sm:flex justify-around absolute left-0 animate">
           {/* 3 */}
-          {images.map((i, index) => {
+          {skills.map((i) => {
+            const { name, image } = i;
             return (
-              <div
-                key={index + 1}
-                className="flex justify-center items-start mx-3"
-              >
-                <img src={i} className=" w-[20rem]" />
+              <div key={name} className="flex justify-center items-start mx-3">
+                <img src={image} alt={name} className=" w-[20rem]" />
               </div>
             );
           })}
-          {images.map((i, index) => {
+          {skills.map((i) => {
+            const { name, image } = i;
             return (
-              <div
-                key={index + 1}
-                className="flex justify-center items-start mx-3"
-              >
-                <img src={i} className=" w-[20rem]" />
+              <div key={name} className="flex justify-center items-start mx-3">
+                <img src={image} alt={name} className=" w-[20rem]" />
               </div>
             );
           })}
         </div>
         <div className="w-[2000px] h-20 flex items-center sm:hidden  justify-around absolute left-0 animate-small">
           {/* 3 */}
-          {images.map((i, index) => {
+          {skills.map((i) => {
+            const { name, image } = i;
             return (
-              <div
-                key={index + 1}
-                className="flex justify-center items-start mx-3"
-              >
-                <img src={i} className=" w-[20rem]" />
+              <div key={name} className="flex justify-center items-start mx-3">
+                <img src={image} alt={name} className=" w-[20rem]" />
               </div>
             );
           })}
-          {images.map((i, index) => {
+          {skills.map((i) => {
+            const { name, image } = i;
             return (
-              <div
-                key={index + 1}
-                className="flex justify-center items-start mx-3"
-              >
-                <img src={i} className=" w-[20rem]" />
+              <div key={name} className="flex justify-center items-start mx-3">
+                <img src={image} alt={name} className=" w-[20rem]" />
               </div>
             );
           })}
