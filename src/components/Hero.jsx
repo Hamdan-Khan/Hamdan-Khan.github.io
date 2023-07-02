@@ -30,8 +30,8 @@ const Hero = ({ skills }) => {
           className="text-lg sm:text-2xl font-semibold text-center dark:text-zinc-200 leading-6 sm:leading-normal"
         >
           MY NAME IS{" "}
-          <span className="font-extrabold gradint-text">HAMDAN KHAN</span> AND I
-          AM A FULL STACK WEB DEVELOPER.
+          <span className="font-extrabold gradint-text">HAMDAN KHAN</span>
+          <br /> A SELF TAUGHT DEVELOPER
         </motion.h2>
         <div className="flex gap-6 justify-center mt-2">
           <motion.button
