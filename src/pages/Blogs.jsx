@@ -13,7 +13,7 @@ const Blogs = ({ blogs }) => {
       </h1>
       <div className="flex sm:flex-row gap-3 flex-wrap items-stretch justify-evenly">
         {blogData.map((blog) => {
-          return <BlogCard blog={blog} />;
+          return <BlogCard key={blog.title} blog={blog} />;
         })}
       </div>
     </div>
