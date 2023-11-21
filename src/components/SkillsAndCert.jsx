@@ -4,6 +4,11 @@ import SkillsSlider from "./SkillsSlider";
 
 const certData = [
   {
+    name: "React + Next.js Fellowship",
+    institute: "Bytewise Limited",
+    link: "https://certificate.givemycertificate.com/c/540fb288-e56d-480e-9307-99fb14f8c776",
+  },
+  {
     name: "Developing Back-end Apps with Node.js and Express",
     institute: "IBM Skills Network Coursera",
     link: "https://coursera.org/share/3fe67dbf1bd712ab1639d471e422f9ee",
