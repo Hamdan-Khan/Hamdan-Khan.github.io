@@ -110,14 +110,14 @@ const Sidebar = ({ skills, projects, blogs, contact, sidenav, setSidenav }) => {
               className={`${drop ? "block" : "hidden"}  p-1 w-full `}
             >
               <a
-                href="https://hamdan-k.me/flexbox-playground/"
+                href="https://hamdan-khan.github.io/flexbox-playground/"
                 className="py-3 border-b block dark:border-zinc-500 border-zinc-400 dark:text-white text-xl sm:text-base"
               >
                 FlexBox Playground ✨
               </a>
 
               <a
-                href="https://hamdan-k.me/api-playground/"
+                href="https://hamdan-khan.github.io/api-playground/"
                 className="py-3 pb-4 block dark:text-white text-xl sm:text-base"
               >
                 API Playground ✨

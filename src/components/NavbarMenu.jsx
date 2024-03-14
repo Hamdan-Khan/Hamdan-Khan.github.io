@@ -110,7 +110,7 @@ const NavbarMenu = ({ skills, projects, contact, blogs }) => {
           >
             <li>
               <a
-                href="https://hamdan-k.me/flexbox-playground/"
+                href="https://hamdan-khan.github.io/flexbox-playground/"
                 className="dark:text-white text-base"
                 onClick={() => setDrop(false)}
               >
@@ -119,7 +119,7 @@ const NavbarMenu = ({ skills, projects, contact, blogs }) => {
             </li>
             <li>
               <a
-                href="https://hamdan-k.me/API-Playground/"
+                href="https://hamdan-khan.github.io/API-Playground/"
                 className="dark:text-white text-base"
                 onClick={() => setDrop(false)}
               >
