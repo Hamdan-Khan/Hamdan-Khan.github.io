@@ -1,11 +1,29 @@
 import blognama from "../assets/blognama.png";
+import apiPg from "../assets/apiPg.png";
+import matchmemo from "../assets/matchmemo.png";
 import vkeyboard from "../assets/virtualkeyboard.png";
 import pokeportal from "../assets/pokeportal.png";
 import surveyapp from "../assets/surveyapp.png";
-import expensetracker from "../assets/expensetracker.png";
 import aslapp from "../assets/aslapp.png";
+import { apiPlaygroundLink } from "./DeployedLinks";
 
 export const projectData = [
+  {
+    title: "MatchMemo",
+    description:
+      "MatchMemo is a football matches record and blogging site built using NEXT.Js (V.14) and football-data.org's API. It uses a cloud-hosted postgresql DB. I keep adding features every now and then.",
+    image: matchmemo,
+    live: "https://match-memo.vercel.app/",
+    github: "https://github.com/Hamdan-Khan/matchmemo",
+  },
+  {
+    title: "API Playground",
+    description:
+      "API Playground is an HTTP client I created out of curiosity using React js. It offers most of the HTTP functionalities including auth, headers, response time and size.",
+    image: apiPg,
+    live: apiPlaygroundLink,
+    github: "https://github.com/Hamdan-Khan/api-playground",
+  },
   {
     title: "BlogNama",
     description:
@@ -38,14 +56,14 @@ export const projectData = [
     live: "https://virtual-urdu-keyboard.netlify.app/",
     github: "https://github.com/Hamdan-Khan/virtual-urdu-keyboard",
   },
-  {
-    title: "Expense Tracker",
-    description:
-      "A utility tool built using React JS to keep track of your expenses and income.",
-    image: expensetracker,
-    live: "https://track-expensez.netlify.app/",
-    github: "https://github.com/Hamdan-Khan/expense-tracker",
-  },
+  // {
+  //   title: "Expense Tracker",
+  //   description:
+  //     "A utility tool built using React JS to keep track of your expenses and income.",
+  //   image: expensetracker,
+  //   live: "https://track-expensez.netlify.app/",
+  //   github: "https://github.com/Hamdan-Khan/expense-tracker",
+  // },
   {
     title: "Sign Language Detection App",
     description:
