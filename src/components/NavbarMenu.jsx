@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import useStore from "../store/store";
 import dropdown from "../assets/icons/dropdown.svg";
+import {
+  apiPlaygroundLink,
+  flexboxPlaygroundLink,
+} from "../data/DeployedLinks";
 
 const NavbarMenu = ({ skills, projects, contact, blogs }) => {
   const theme = useStore((state) => state.theme);
@@ -110,7 +114,7 @@ const NavbarMenu = ({ skills, projects, contact, blogs }) => {
           >
             <li>
               <a
-                href="https://hamdan-khan.github.io/flexbox-playground/"
+                href={flexboxPlaygroundLink}
                 className="dark:text-white text-base"
                 onClick={() => setDrop(false)}
               >
@@ -119,7 +123,7 @@ const NavbarMenu = ({ skills, projects, contact, blogs }) => {
             </li>
             <li>
               <a
-                href="https://hamdan-khan.github.io/API-Playground/"
+                href={apiPlaygroundLink}
                 className="dark:text-white text-base"
                 onClick={() => setDrop(false)}
               >
