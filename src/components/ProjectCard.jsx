@@ -27,7 +27,7 @@ const ProjectCard = ({ img, title, description, live, github }) => {
       animate={control}
       className="card card-compact w-80 bg-base-100 shadow-xl border border-zinc-200 dark:border-none dark:text-white dark:shadow-zinc-800 dark:bg-zinc-600"
     >
-      <figure className="border-b border-zinc-300 cursor-pointer">
+      <figure>
         <LazyLoad height="200px" offset="20px">
           <img src={img} alt="Shoes" />
         </LazyLoad>
