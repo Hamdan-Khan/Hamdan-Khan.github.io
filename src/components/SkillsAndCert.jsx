@@ -4,6 +4,11 @@ import SkillsSlider from "./SkillsSlider";
 
 const certData = [
   {
+    name: "Supervised Machine Learning: Regression and Classification",
+    institute: "Stanford University (Online)",
+    link: "https://coursera.org/share/b2fcc4aff266ea38e3a8fa184b2f259f",
+  },
+  {
     name: "React + Next.js Fellowship",
     institute: "Bytewise Limited",
     link: "https://certificate.givemycertificate.com/c/540fb288-e56d-480e-9307-99fb14f8c776",
