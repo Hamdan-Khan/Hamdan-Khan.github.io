@@ -3,7 +3,7 @@ import SkillsAndCert from "./SkillsAndCert";
 import About from "./About";
 
 const Skills = ({ skills }) => {
-  const [tab, setTab] = useState("skills");
+  const [tab, setTab] = useState("cert");
   return (
     <div
       ref={skills}

@@ -43,9 +43,6 @@ const certData = [
 const SkillsAndCert = ({ tab, setTab }) => {
   return (
     <>
-      {/* <h1 className="dark:text-white my-7 text-3xl sm:text-4xl text-center font-bold">
-        SKILLS & CERTIFICATIONS
-      </h1> */}
       <div className="flex flex-col justify-center p-1 sm:p-4 w-full">
         <SkillsTab tab={tab} setTab={setTab} />
         <div className="dark:text-white">
@@ -55,9 +52,6 @@ const SkillsAndCert = ({ tab, setTab }) => {
             </div>
           ) : (
             <div className="w-full flex flex-col sm:flex-row flex-wrap justify-evenly">
-              {/* <h1 className="text-2xl font-semibold dark:text-white">
-                CERTIFICATIONS
-              </h1> */}
               {certData.map((cert) => {
                 const { name, institute, link } = cert;
                 return (
