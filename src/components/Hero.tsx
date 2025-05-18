@@ -1,7 +1,7 @@
-import Snippet from "./Snippet";
 import { motion } from "framer-motion";
+import Snippet from "./Snippet";
 
-const Hero = ({ skills }) => {
+const Hero = ({ skillsRef }: { skillsRef: React.Ref<HTMLDivElement> }) => {
   const hDelay = 0.3;
   const hVariant = {
     hidden: { opacity: 0, x: -100 },
@@ -39,13 +39,19 @@ const Hero = ({ skills }) => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4, delay: hDelay * 2 }}
             className="bg-green-500 dark:bg-green-600 dark:hover:bg-green-500 hover:shadow-md hover:bg-green-600 duration-200 font-semibold text-white rounded-xl py-1 px-12 text-lg sm:text-xl"
-            onClick={() =>
-              skills.current.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "nearest",
-              })
-            }
+            onClick={() => {
+              if (
+                skillsRef &&
+                typeof skillsRef === "object" &&
+                skillsRef.current
+              ) {
+                skillsRef.current.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                  inline: "nearest",
+                });
+              }
+            }}
           >
             ABOUT ME
           </motion.button>

@@ -1,5 +1,3 @@
-import React from "react";
-
 const SwapIcon = ({ sidenav, setSidenav }) => {
   return (
     <label className="sm:hidden relative btn  btn-ghost swap swap-rotate">

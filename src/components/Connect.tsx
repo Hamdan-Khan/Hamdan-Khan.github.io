@@ -1,8 +1,7 @@
-import React from "react";
-import linkedin from "../assets/logos/linkedin.png";
-import github from "../assets/logos/github.svg";
-import twitter from "../assets/logos/twitter.svg";
 import gravatar from "../assets/gravatar.png";
+import github from "../assets/logos/github.svg";
+import linkedin from "../assets/logos/linkedin.png";
+import twitter from "../assets/logos/twitter.svg";
 
 const socials = [
   {

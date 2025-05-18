@@ -1,6 +1,11 @@
 import { create } from "zustand";
 
-const useStore = create((set) => ({
+interface StoreState {
+  theme: boolean;
+  setTheme: (theme: boolean) => void;
+}
+
+const useStore = create<StoreState>((set) => ({
   theme:
     localStorage.getItem("theme") === "dark" ||
     (window.matchMedia &&

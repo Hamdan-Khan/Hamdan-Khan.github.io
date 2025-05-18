@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import resume from "../assets/docs/Hamdan-Khan-resume.pdf";
 import doomer from "../assets/doomer.png";
 import download from "../assets/icons/download.svg";
-import resume from "../assets/docs/Hamdan-Khan-resume.pdf";
-import { useAnimation, motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const boxVariant = {
   visible: { opacity: 1, y: 0, transition: { duration: 1 } },

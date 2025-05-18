@@ -1,19 +1,19 @@
-import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { FormEvent, useRef, useState } from "react";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [toast, setToast] = useState("");
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: FormEvent) => {
     e.preventDefault();
 
-    if (!name || !email || !message) {
+    if (!name || !email || !message || !form.current) {
       setToast("error");
-      const timeoutId = setTimeout(() => {
+      setTimeout(() => {
         setToast("");
       }, 3000);
     } else {
@@ -30,7 +30,7 @@ const ContactForm = () => {
             setMessage("");
             setName("");
             setToast("success");
-            const timeoutId = setTimeout(() => {
+            setTimeout(() => {
               setToast("");
             }, 3000);
           },

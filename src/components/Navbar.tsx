@@ -1,10 +1,20 @@
 import { useState } from "react";
 import useStore from "../store/store";
-import SwapIcon from "./SwapIcon";
-import Sidebar from "./Sidebar";
 import NavbarMenu from "./NavbarMenu";
+import Sidebar from "./Sidebar";
+import SwapIcon from "./SwapIcon";
 
-const Navbar = ({ projects, skills, contact, blogs }) => {
+const Navbar = ({
+  projectsRef,
+  skillsRef,
+  contactRef,
+  blogsRef,
+}: {
+  projectsRef: React.Ref<HTMLDivElement>;
+  skillsRef: React.Ref<HTMLDivElement>;
+  contactRef: React.Ref<HTMLDivElement>;
+  blogsRef: React.Ref<HTMLDivElement>;
+}) => {
   const theme = useStore((state) => state.theme);
   const setTheme = useStore((state) => state.setTheme);
   const [sidenav, setSidenav] = useState(false);
@@ -21,18 +31,18 @@ const Navbar = ({ projects, skills, contact, blogs }) => {
       </h1>
       <div className="flex overflow-hidden">
         <NavbarMenu
-          skills={skills}
-          projects={projects}
-          contact={contact}
-          blogs={blogs}
+          projects={projectsRef}
+          skills={skillsRef}
+          contact={contactRef}
+          blogs={blogsRef}
         />
 
         <Sidebar
-          skills={skills}
-          projects={projects}
-          contact={contact}
+          projects={projectsRef}
+          skills={skillsRef}
+          contact={contactRef}
+          blogs={blogsRef}
           sidenav={sidenav}
-          blogs={blogs}
           setSidenav={setSidenav}
         />
 

@@ -1,10 +1,10 @@
-import blognama from "../assets/blognama.png";
 import apiPg from "../assets/apiPg.png";
+import aslapp from "../assets/aslapp.png";
+import blognama from "../assets/blognama.png";
 import matchmemo from "../assets/matchmemo.png";
-import vkeyboard from "../assets/virtualkeyboard.png";
 import pokeportal from "../assets/pokeportal.png";
 import surveyapp from "../assets/surveyapp.png";
-import aslapp from "../assets/aslapp.png";
+import vkeyboard from "../assets/virtualkeyboard.png";
 import { apiPlaygroundLink } from "./DeployedLinks";
 
 export const projectData = [

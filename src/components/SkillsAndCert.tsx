@@ -1,6 +1,5 @@
-import React from "react";
-import SkillsTab from "./SkillsTab";
 import SkillsSlider from "./SkillsSlider";
+import SkillsTab from "./SkillsTab";
 
 const certData = [
   {

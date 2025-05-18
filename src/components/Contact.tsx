@@ -1,10 +1,10 @@
 import React from "react";
 import ContactForm from "./ContactForm";
 
-const Contact = ({ contact }) => {
+const Contact = ({ contactRef }: { contactRef: React.Ref<HTMLDivElement> }) => {
   return (
     <div
-      ref={contact}
+      ref={contactRef}
       className="px-6 sm:px-10 md:px-12 py-8 border-y-[2px] dark:text-white border-zinc-500 border-dashed scroll-m-28 sm:scroll-m-20"
     >
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-5 text-center">
@@ -19,9 +19,6 @@ const Contact = ({ contact }) => {
             <br />
             Don't hesitate to drop me a line!
           </h2>
-          {/* <h2 className="text-lg sm:text-xl dark:text-zinc-300 text-zinc-700 uppercase">
-            Let's Get in Touch!
-          </h2> */}
           <p className="text-zinc-600 dark:text-zinc-400">
             Let's work together to bring your vision into reality.
           </p>

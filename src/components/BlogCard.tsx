@@ -1,8 +1,8 @@
-import React from "react";
 import LazyLoad from "react-lazy-load";
+import { BlogData } from "../data/BlogsData";
 
-const BlogCard = ({ blog }) => {
-  const { title, image, link } = blog;
+const BlogCard = ({ blogData }: { blogData: BlogData }) => {
+  const { title, image, link } = blogData;
   return (
     <div className="flex flex-col bg-white dark:bg-slate-700 dark:text-white rounded-xl overflow-hidden p-3 shadow-xl max-w-[400px] my-2 border border-zinc-200 dark:border-zinc-600">
       <LazyLoad offset="100px">

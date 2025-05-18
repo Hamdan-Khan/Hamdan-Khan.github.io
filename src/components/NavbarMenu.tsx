@@ -1,12 +1,22 @@
-import React, { useEffect, useState } from "react";
-import useStore from "../store/store";
+import React, { useState } from "react";
 import dropdown from "../assets/icons/dropdown.svg";
 import {
   apiPlaygroundLink,
   flexboxPlaygroundLink,
 } from "../data/DeployedLinks";
+import useStore from "../store/store";
 
-const NavbarMenu = ({ skills, projects, contact, blogs }) => {
+const NavbarMenu = ({
+  skills,
+  projects,
+  contact,
+  blogs,
+}: {
+  skills: React.RefObject<HTMLDivElement>;
+  projects: React.RefObject<HTMLDivElement>;
+  contact: React.RefObject<HTMLDivElement>;
+  blogs: React.RefObject<HTMLDivElement>;
+}) => {
   const theme = useStore((state) => state.theme);
   const [drop, setDrop] = useState(false);
 
@@ -23,13 +33,15 @@ const NavbarMenu = ({ skills, projects, contact, blogs }) => {
               ? "hover-underline-animation"
               : "hover-underline-animation-dark"
           } font-medium cursor-pointer`}
-          onClick={() =>
-            skills.current.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-              inline: "nearest",
-            })
-          }
+          onClick={() => {
+            if (skills.current) {
+              skills.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+              });
+            }
+          }}
         >
           About
         </p>

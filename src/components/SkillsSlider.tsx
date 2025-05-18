@@ -1,25 +1,14 @@
-import React from "react";
-import html from "../assets/logos/html-5.png";
 import css from "../assets/logos/css.png";
 import express from "../assets/logos/express.png";
-import mongodb from "../assets/logos/mongodb.png";
+import html from "../assets/logos/html-5.png";
 import js from "../assets/logos/js.png";
-import nodejs from "../assets/logos/nodejs.png";
-import react from "../assets/logos/react.png";
-import python from "../assets/logos/python.png";
-import tailwind from "../assets/logos/tailwind.png";
+import mongodb from "../assets/logos/mongodb.png";
 import next from "../assets/logos/next.png";
+import nodejs from "../assets/logos/nodejs.png";
+import python from "../assets/logos/python.png";
+import react from "../assets/logos/react.png";
+import tailwind from "../assets/logos/tailwind.png";
 
-// const techs = [
-//   { name: "HTML", img: html },
-//   { name: "CSS", img: css },
-//   { name: "JavaScript", img: js },
-//   { name: "ReactJS", img: react },
-//   { name: "NodeJS", img: nodejs },
-//   { name: "ExpressJS", img: express },
-//   { name: "MongoDB", img: mongodb },
-//   { name: "Python", img: python },
-// ];
 const skills = [
   { image: html, name: "HTML" },
   { image: css, name: "CSS" },

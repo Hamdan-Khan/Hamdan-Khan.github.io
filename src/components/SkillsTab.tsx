@@ -1,5 +1,3 @@
-import React from "react";
-
 const SkillsTab = ({ tab, setTab }) => {
   return (
     <div className="btm-nav dark:text-white bg-transparent text-lg sm:text-xl font-semibold static h-[3rem]">
